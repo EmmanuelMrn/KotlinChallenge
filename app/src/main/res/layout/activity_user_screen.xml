@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="7"
+        tools:context=".user.UserScreenActivity">
+
+        <TextView
+            android:id="@+id/user_name_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left |center_vertical"
+            android:paddingHorizontal="@dimen/start_padding"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/global_margin"
+            android:textColor="@color/black"
+            android:text="@string/name_label" />
+
+        <TextView
+            android:id="@+id/user_email_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left |center_vertical"
+            android:paddingHorizontal="@dimen/start_padding"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/global_margin"
+            android:textColor="@color/black"
+            android:text="@string/email_label" />
+
+        <TextView
+            android:id="@+id/user_english_level_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left |center_vertical"
+            android:paddingHorizontal="@dimen/start_padding"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/global_margin"
+            android:textColor="@color/black"
+            android:text="@string/english_level_label" />
+
+        <TextView
+            android:id="@+id/user_knowledge_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left |center_vertical"
+            android:paddingHorizontal="@dimen/start_padding"
+            android:layout_weight=".5"
+            android:layout_margin="@dimen/global_margin"
+            android:textColor="@color/black"
+            android:text="@string/technical_knowledge_label" />
+
+        <EditText
+            android:id="@+id/user_knowledge_edittext"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/global_margin"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.2"
+            android:inputType="textMultiLine"
+            android:hint="@string/technical_knowledge_message"/>
+
+        <TextView
+            android:id="@+id/user_link_cv"
+            android:layout_margin="@dimen/global_margin"
+            android:layout_width="match_parent"
+            android:gravity="left |center_vertical"
+            android:paddingHorizontal="@dimen/start_padding"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:text="@string/cv_label" />
+
+        <Button
+            android:id="@+id/user_logout_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".3"
+            android:backgroundTint="@color/orange"
+            android:layout_margin="@dimen/global_margin"
+            android:text="@string/logout_label"/>
+
+    </LinearLayout>
+</layout>

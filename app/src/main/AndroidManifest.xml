@@ -4,12 +4,16 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_kotlin"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_kotlin_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MindTeamsChallenge">
-        <activity android:name=".MainActivity">
+        <activity android:name=".user.UserScreenActivity"></activity>
+        <activity android:name=".superadmin.SuperAdminScreenActivity" />
+        <activity android:name=".admin.AdminScreenActivity" />
+        <activity android:name=".home.HomeActivity" />
+        <activity android:name=".login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

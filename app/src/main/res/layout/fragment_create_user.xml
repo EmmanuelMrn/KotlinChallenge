@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".detailsoptions.CreateUserFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/global_margin"
+        android:textColor="@color/black"
+        android:text="@string/create_user_label"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="@dimen/is_admin_label"/>
+    <EditText
+        android:id="@+id/create_user_edittext_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/global_margin"
+        android:inputType="text"
+        android:hint="@string/name_label" />
+
+    <EditText
+        android:id="@+id/create_user_edittext_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:layout_margin="@dimen/global_margin"
+        android:hint="@string/email_label" />
+
+    <EditText
+        android:id="@+id/create_user_edittext_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:layout_margin="@dimen/global_margin"
+        android:hint="@string/password_label" />
+
+    <EditText
+        android:id="@+id/create_user_edittext_english_level"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_margin="@dimen/global_margin"
+        android:hint="@string/english_level_label" />
+
+    <EditText
+        android:id="@+id/create_user_edittext_knowledge_tech"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_margin="@dimen/global_margin"
+        android:hint="@string/technical_knowledge_label" />
+
+    <EditText
+        android:id="@+id/create_user_edittext_curriculum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_margin="@dimen/global_margin"
+        android:hint="@string/cv_label" />
+
+    <EditText
+        android:id="@+id/create_user_edittext_account_team"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_margin="@dimen/global_margin"
+        android:hint="@string/account_name_label" />
+
+    <EditText
+        android:id="@+id/create_user_edittext_start_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:layout_margin="@dimen/global_margin"
+        android:hint="@string/start_date_with_format_label" />
+
+    <EditText
+        android:id="@+id/create_user_edittext_ending_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:layout_margin="@dimen/global_margin"
+        android:hint="@string/ending_date_with_format_label" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/global_margin"
+        android:weightSum="2"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/create_user_cancel_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/global_margin"
+            android:textColor="@color/white"
+            android:text="@string/cancel_label" />
+
+        <Button
+            android:id="@+id/create_user_accept_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/global_margin"
+            android:textColor="@color/white"
+            android:text="@string/accept_label"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

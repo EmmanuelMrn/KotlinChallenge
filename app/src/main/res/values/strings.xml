@@ -1,3 +1,55 @@
 <resources>
-    <string name="app_name">MindTeamsChallenge</string>
+    <string name="app_name">Kotlin x Firebase</string>
+    <string name="email_label">Email</string>
+    <string name="password_label">Password</string>
+    <string name="login_label">Log in</string>
+    <string name="logout_label">Log out</string>
+    <string name="users_label">Users</string>
+    <string name="accounts_label">Accounts</string>
+    <string name="name_label">Name</string>
+    <string name="account_name_label">Account Name</string>
+    <string name="client_name_label">Client Name</string>
+    <string name="operation_responsible_name_label">Operation Responsible Name</string>
+    <string name="consult_team_label">Consul Team</string>
+    <string name="filter_label">Filter</string>
+    <string name="english_level_label">English Level (%)</string>
+    <string name="technical_knowledge_label">Technical Knowledge</string>
+    <string name="technical_knowledge_message">Please add your Technical Knowledge</string>
+    <string name="cv_label">Curriculum Link</string>
+    <string name="filter_by_team">By team</string>
+    <string name="filter_by_name">By name</string>
+    <string name="filter_by_date">By date</string>
+    <string name="start_date_label">Start date</string>
+    <string name="ending_date_label">Ending date</string>
+    <string name="start_date_with_format_label">Start date DD/MM/YYYY</string>
+    <string name="ending_date_with_format_label">Ending date DD/MM/YYYY</string>
+    <string name="user_label">User</string>
+    <string name="admin_label">Admin</string>
+    <string name="super_admin_label">Super Admin</string>
+    <string name="level_access_label">Level Access: </string>
+    <string name="no_label">No</string>
+    <string name="yes_label">Yes</string>
+
+    <string name="success_label">Successful</string>
+    <string name="error_label">Error</string>
+    <string name="accept_label">Accept</string>
+    <string name="error_message">There can be no empty fields</string>
+    <string name="error_occurred_message">An error has occurred</string>
+    <string name="error_credentials_message">Some of your credentials are not correct</string>
+    <string name="user_created_successfully_label">The user has been created successfully</string>
+
+
+    <string name="create_user_label">Create user</string>
+    <string name="delete_user_label">Delete user</string>
+    <string name="update_user_label">Update user</string>
+    <string name="consult_user_label">Consult user</string>
+    <string name="move_user_label">Move user to another account</string>
+    <string name="consult_log_user_label">Consult log of movements</string>
+
+    <string name="create_account_label">Create account</string>
+    <string name="delete_account_label">Delete account</string>
+    <string name="update_account_label">Update account</string>
+    <string name="consult_account_label">Consult account</string>
+
+    <string name="cancel_label">Cancel</string>
 </resources>
