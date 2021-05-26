@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "783620183167",
+    "project_id": "mtkotlinchallenge",
+    "storage_bucket": "mtkotlinchallenge.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:783620183167:android:e030fb18777ae96c855b4a",
+        "android_client_info": {
+          "package_name": "com.example.mindteamschallenge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "783620183167-1t4qfmest7ln331noj2vtvd5kj7ounf4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIViAvj3QdiD_5hEk9g6ZTZ7ZcNc5Fp-c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "783620183167-1t4qfmest7ln331noj2vtvd5kj7ounf4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

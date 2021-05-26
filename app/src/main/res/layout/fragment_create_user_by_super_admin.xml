@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".detailsoptions.CreateUserBySuperAdminFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/global_margin"
+        android:textColor="@color/black"
+        android:text="@string/create_user_label"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="@dimen/is_admin_label"/>
+
+    <EditText
+        android:id="@+id/create_user_edittext_name_by_super_admin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/global_margin"
+        android:inputType="text"
+        android:hint="@string/name_label" />
+
+    <EditText
+        android:id="@+id/create_user_edittext_email_by_super_admin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:layout_margin="@dimen/global_margin"
+        android:hint="@string/email_label" />
+
+    <EditText
+        android:id="@+id/create_user_edittext_password_by_super_admin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:layout_margin="@dimen/global_margin"
+        android:hint="@string/password_label" />
+
+    <EditText
+        android:id="@+id/create_user_edittext_english_level_by_super_admin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_margin="@dimen/global_margin"
+        android:hint="@string/english_level_label" />
+
+    <EditText
+        android:id="@+id/create_user_edittext_knowledge_tech_by_super_admin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_margin="@dimen/global_margin"
+        android:hint="@string/technical_knowledge_label" />
+
+    <EditText
+        android:id="@+id/create_user_edittext_curriculum_by_super_admin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_margin="@dimen/global_margin"
+        android:hint="@string/cv_label" />
+
+    <EditText
+        android:id="@+id/create_user_edittext_account_team_by_super_admin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_margin="@dimen/global_margin"
+        android:hint="@string/account_name_label" />
+
+    <EditText
+        android:id="@+id/create_user_edittext_start_date_by_super_admin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:layout_margin="@dimen/global_margin"
+        android:hint="@string/start_date_with_format_label" />
+
+    <EditText
+        android:id="@+id/create_user_edittext_ending_date_by_super_admin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:layout_margin="@dimen/global_margin"
+        android:hint="@string/ending_date_with_format_label" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_margin="@dimen/global_margin"
+        android:orientation="horizontal" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/global_margin"
+            android:textColor="@color/black"
+            android:textSize="@dimen/is_admin_label"
+            android:text="@string/level_access_label"/>
+
+        <RadioGroup
+            android:id="@+id/create_user_isadmin_radiogroup_by_super_admin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/create_user_no_radiotbutton_by_super_admin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/global_margin"
+                android:text="@string/user_label"/>
+
+            <RadioButton
+                android:id="@+id/create_user_yes_radiotbutton_by_super_admin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/admin_label"/>
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/global_margin"
+        android:weightSum="2"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/create_user_cancel_button_by_super_admin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/global_margin"
+            android:textColor="@color/white"
+            android:text="@string/cancel_label" />
+
+        <Button
+            android:id="@+id/create_user_accept_button_by_super_admin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/global_margin"
+            android:textColor="@color/white"
+            android:text="@string/accept_label"/>
+
+    </LinearLayout>
+
+</LinearLayout>
