@@ -34,9 +34,13 @@
     <string name="error_label">Error</string>
     <string name="accept_label">Accept</string>
     <string name="error_message">There can be no empty fields</string>
+    <string name="error_updating_data">An error has occurred, check your internet connection please</string>
+    <string name="error_connection_message">Check your internet connection please</string>
     <string name="error_occurred_message">An error has occurred</string>
     <string name="error_credentials_message">Some of your credentials are not correct</string>
     <string name="user_created_successfully_label">The user has been created successfully</string>
+    <string name="account_created_successfully_label">The account has been created successfully</string>
+    <string name="success_updating_data">The data has been updated successfully</string>
 
 
     <string name="create_user_label">Create user</string>
@@ -50,6 +54,20 @@
     <string name="delete_account_label">Delete account</string>
     <string name="update_account_label">Update account</string>
     <string name="consult_account_label">Consult account</string>
+    <string name="account_name">Name</string>
+    <string name="account_client_name">Client</string>
+    <string name="account_responsible_name">Operation Responsible</string>
 
     <string name="cancel_label">Cancel</string>
+    <string name="shared_preferences_file">com.example.mindteamschallenge.PREFERENCES_FILE_KEY</string>
+    <string name="welcome_user_message">Welcome User!</string>
+    <string name="welcome_admin_message">Welcome Admin!</string>
+    <string name="welcome_super_admin_message">Welcome Super Admin!</string>
+    <string name="save_changes">Save changes</string>
+
+    <string name="user_screen_info_name">Name: </string>
+    <string name="user_screen_info_email">Email: </string>
+    <string name="user_screen_info_english_level">English Level (%): </string>
+    <string name="user_screen_info_tech_knowledge">Tech Knowledge: </string>
+    <string name="user_screen_info_cv">CV: </string>
 </resources>

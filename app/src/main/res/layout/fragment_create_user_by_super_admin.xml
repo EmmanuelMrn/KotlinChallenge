@@ -40,53 +40,13 @@
         android:layout_margin="@dimen/global_margin"
         android:hint="@string/password_label" />
 
-    <EditText
-        android:id="@+id/create_user_edittext_english_level_by_super_admin"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="number"
         android:layout_margin="@dimen/global_margin"
-        android:hint="@string/english_level_label" />
-
-    <EditText
-        android:id="@+id/create_user_edittext_knowledge_tech_by_super_admin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:layout_margin="@dimen/global_margin"
-        android:hint="@string/technical_knowledge_label" />
-
-    <EditText
-        android:id="@+id/create_user_edittext_curriculum_by_super_admin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:layout_margin="@dimen/global_margin"
-        android:hint="@string/cv_label" />
-
-    <EditText
-        android:id="@+id/create_user_edittext_account_team_by_super_admin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:layout_margin="@dimen/global_margin"
-        android:hint="@string/account_name_label" />
-
-    <EditText
-        android:id="@+id/create_user_edittext_start_date_by_super_admin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="date"
-        android:layout_margin="@dimen/global_margin"
-        android:hint="@string/start_date_with_format_label" />
-
-    <EditText
-        android:id="@+id/create_user_edittext_ending_date_by_super_admin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="date"
-        android:layout_margin="@dimen/global_margin"
-        android:hint="@string/ending_date_with_format_label" />
+        android:textColor="@color/black"
+        android:textSize="@dimen/is_admin_label"
+        android:text="@string/level_access_label"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -94,13 +54,6 @@
         android:gravity="center_vertical"
         android:layout_margin="@dimen/global_margin"
         android:orientation="horizontal" >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/global_margin"
-            android:textColor="@color/black"
-            android:textSize="@dimen/is_admin_label"
-            android:text="@string/level_access_label"/>
 
         <RadioGroup
             android:id="@+id/create_user_isadmin_radiogroup_by_super_admin"
@@ -109,14 +62,15 @@
             android:orientation="horizontal">
 
             <RadioButton
-                android:id="@+id/create_user_no_radiotbutton_by_super_admin"
+                android:id="@+id/create_user_is_user_radiotbutton_by_super_admin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/global_margin"
+                android:checked="true"
                 android:text="@string/user_label"/>
 
             <RadioButton
-                android:id="@+id/create_user_yes_radiotbutton_by_super_admin"
+                android:id="@+id/create_user_is_admin_radiotbutton_by_super_admin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/admin_label"/>

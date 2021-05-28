@@ -4,40 +4,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".detailsoptions.CreateUserFragment">
+    tools:context=".detailsoptions.CreateAccountFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/global_margin"
         android:textColor="@color/black"
-        android:text="@string/create_user_label"
+        android:text="@string/create_account_label"
         android:gravity="center"
         android:textStyle="bold"
         android:textSize="@dimen/is_admin_label"/>
+
     <EditText
-        android:id="@+id/create_user_edittext_name"
+        android:id="@+id/create_account_edittext_name_account"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/global_margin"
         android:inputType="text"
-        android:hint="@string/name_label" />
+        android:hint="@string/account_name" />
 
     <EditText
-        android:id="@+id/create_user_edittext_email"
+        android:id="@+id/create_account_edittext_name_client"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
+        android:inputType="text"
         android:layout_margin="@dimen/global_margin"
-        android:hint="@string/email_label" />
+        android:hint="@string/account_client_name" />
 
     <EditText
-        android:id="@+id/create_user_edittext_password"
+        android:id="@+id/create_account_edittext_responsible_operation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
+        android:inputType="text"
         android:layout_margin="@dimen/global_margin"
-        android:hint="@string/password_label" />
+        android:hint="@string/account_responsible_name" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -47,7 +48,7 @@
         android:orientation="horizontal" >
 
         <Button
-            android:id="@+id/create_user_cancel_button"
+            android:id="@+id/create_account_cancel_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -56,7 +57,7 @@
             android:text="@string/cancel_label" />
 
         <Button
-            android:id="@+id/create_user_accept_button"
+            android:id="@+id/create_account_accept_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -65,6 +66,5 @@
             android:text="@string/accept_label"/>
 
     </LinearLayout>
-
 
 </LinearLayout>

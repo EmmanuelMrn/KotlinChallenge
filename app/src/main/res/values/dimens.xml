@@ -4,4 +4,5 @@
     <dimen name="global_margin">10dp</dimen>
     <dimen name="start_padding">10dp</dimen>
     <dimen name="is_admin_label">18sp</dimen>
+    <dimen name="titles_standard_size">22sp</dimen>
 </resources>

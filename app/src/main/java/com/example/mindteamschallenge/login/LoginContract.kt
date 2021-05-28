@@ -6,15 +6,21 @@ interface LoginContract {
     interface View {
         fun showErrorAlert()
         fun showCredentialsErrorAlert()
-        fun showHome(email: String)
+        fun showConnectionErrorAlert()
+        fun validateLevelAccess(email: String)
+        fun showHome(email: String, userRole: String)
     }
 
     interface Presenter {
-        fun logIn(inputEmail : EditText, inputPassword : EditText)
-        fun getUserRole(email : String) : String
+        fun logIn(inputEmail: EditText, inputPassword: EditText)
+        fun getUserRole(email: String)
     }
 
     interface Model {
-        fun getLevelAccess(email : String) : String
+        fun getLevelAccess(
+            email: String,
+            successListener: (String) -> Unit,
+            errorListener: (String) -> Unit
+        )
     }
 }

@@ -11,19 +11,6 @@ interface SuperAdminContract {
     }
 
     interface Presenter {
-        fun createUser(context: Context, inputEmail: EditText, inputPassword: EditText)
-        fun deleteUser()
-        fun updateUser()
-        fun consultUser()
-        fun moveUserAnotherAccount()
-        fun consultLogMovements()
-
-
-        fun createAccount()
-        fun deleteAccount()
-        fun updateAccount()
-        fun consultAccount()
-
         fun logout()
     }
 

@@ -8,8 +8,20 @@ class UserPresenter(
     private val userModel: UserContract.Model
 ) : UserContract.Presenter {
 
-    override fun getDetailInfo() {
-        TODO("Not yet implemented")
+    override fun getDetailInfo(email: String) {
+        userModel.getInfoFromDatabase(email, { dataUser ->
+            userScreenActivity.showDetailInfo(dataUser)
+        }, { error ->
+
+        })
+    }
+
+    override fun updateUserInfo(dataForUpdate: DataUser) {
+        userModel.updateInfoInDatabase(dataForUpdate, {
+            userScreenActivity.showSuccessDataUpdated()
+        }, {
+            userScreenActivity.showErrorDataUpdate()
+        })
     }
 
     override fun logout() {

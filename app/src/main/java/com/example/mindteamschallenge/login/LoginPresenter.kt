@@ -16,7 +16,7 @@ class LoginPresenter(
                 inputPassword.text.toString()
             ).addOnCompleteListener {
                 if (it.isSuccessful) {
-                    loginActivity.showHome(it.result?.user?.email ?: "")
+                    loginActivity.validateLevelAccess(inputEmail.text.toString())
                 } else {
                     loginActivity.showCredentialsErrorAlert()
                 }
@@ -27,9 +27,11 @@ class LoginPresenter(
 
     }
 
-    override fun getUserRole(email : String) : String {
-        return loginModel.getLevelAccess(email)
+    override fun getUserRole(email: String) {
+        loginModel.getLevelAccess(email, { levelAccess ->
+            loginActivity.showHome(email, levelAccess)
+        }, { error ->
+            loginActivity.showConnectionErrorAlert()
+        })
     }
-
-
 }

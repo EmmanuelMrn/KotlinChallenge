@@ -1,52 +1,81 @@
 package com.example.mindteamschallenge.detailsoptions
 
+import android.app.Activity
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.Fragment
 import com.example.mindteamschallenge.R
+import com.example.mindteamschallenge.login.DataUserLogin
+import com.example.mindteamschallenge.utils.DBConstants
 
 class CreateUserFragment : DialogFragment() {
     private lateinit var mDatabaseHelper: DatabaseHelper
+    private lateinit var nameEditText: EditText
+    private lateinit var emailEditText: EditText
+    private lateinit var passwordEditText: EditText
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        var rootView = inflater.inflate(R.layout.fragment_create_user, container, false)
+        val rootView = inflater.inflate(R.layout.fragment_create_user, container, false)
         mDatabaseHelper = DatabaseHelper()
 
-        var nameEditText : EditText = rootView.findViewById(R.id.create_user_edittext_name) as EditText
-        var emailEditText : EditText = rootView.findViewById(R.id.create_user_edittext_email) as EditText
-        var passwordEditText : EditText = rootView.findViewById(R.id.create_user_edittext_password) as EditText
-        var englishLevelEditText : EditText = rootView.findViewById(R.id.create_user_edittext_english_level) as EditText
-        var techKnowledgeEditText : EditText = rootView.findViewById(R.id.create_user_edittext_knowledge_tech) as EditText
-        var cvLinkEditText : EditText = rootView.findViewById(R.id.create_user_edittext_curriculum) as EditText
-        var accountNameEditText : EditText = rootView.findViewById(R.id.create_user_edittext_account_team) as EditText
-        var startDateEditText : EditText = rootView.findViewById(R.id.create_user_edittext_start_date) as EditText
-        var endingDateEditText : EditText = rootView.findViewById(R.id.create_user_edittext_ending_date) as EditText
+        nameEditText = rootView.findViewById(R.id.create_user_edittext_name) as EditText
+        emailEditText = rootView.findViewById(R.id.create_user_edittext_email) as EditText
+        passwordEditText = rootView.findViewById(R.id.create_user_edittext_password) as EditText
 
         val createUserButton : Button = rootView.findViewById(R.id.create_user_accept_button) as Button
-        var createdUserSuccessful = false
+        val cancelButton: Button = rootView.findViewById(R.id.create_user_cancel_button) as Button
 
         createUserButton.setOnClickListener {
-            createdUserSuccessful = mDatabaseHelper.createUser(nameEditText.text.toString(),
-                emailEditText.text.toString(), passwordEditText.text.toString(),
-                englishLevelEditText.text.toString(), techKnowledgeEditText.text.toString(),
-                cvLinkEditText.text.toString(), accountNameEditText.text.toString(),
-                startDateEditText.text.toString(), endingDateEditText.text.toString())
+            createNewUser()
+            dismiss()
+            hideKeyboard()
+        }
 
-            if (createdUserSuccessful){
-                dismiss()
-                Toast.makeText(activity, R.string.user_created_successfully_label, Toast.LENGTH_SHORT).show()
-            }
+        cancelButton.setOnClickListener {
+            dismiss()
+            hideKeyboard()
         }
 
         return rootView
     }
 
+    private fun createNewUser() {
+        if (nameEditText.text.isNotEmpty() && emailEditText.text.isNotEmpty() && passwordEditText.text.isNotEmpty()) {
+            val dataUserRegister = DataUserRegister(
+                nameEditText.text.toString(),
+                emailEditText.text.toString(),
+                passwordEditText.text.toString(),
+                DBConstants.USER_ROLE
+            )
+            mDatabaseHelper.createUser(dataUserRegister)
+            Toast.makeText(activity, R.string.user_created_successfully_label, Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(activity, R.string.error_message, Toast.LENGTH_LONG).show()
+        }
+    }
+
+    fun Fragment.hideKeyboard() {
+        view?.let { activity?.hideKeyboard(it) }
+    }
+
+    fun Activity.hideKeyboard() {
+        hideKeyboard(currentFocus ?: View(this))
+    }
+
+    fun Context.hideKeyboard(view: View) {
+        val inputMethodManager =
+            getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+    }
 }
