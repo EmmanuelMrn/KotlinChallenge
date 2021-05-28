@@ -11,29 +11,84 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".admin.AdminScreenActivity">
+        android:weightSum="4"
+        tools:context=".superadmin.SuperAdminScreenActivity">
 
-        <Button
-            android:id="@+id/users_admin_button"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/ocean_blue"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:textSize="@dimen/titles_standard_size"
             android:layout_margin="@dimen/global_margin"
             android:text="@string/users_label" />
 
-        <Button
-            android:id="@+id/accounts_admin_button"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/create_user_admin_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/global_margin"
+                android:text="@string/create_user_label" />
+
+            <Button
+                android:id="@+id/consult_user_admin_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/global_margin"
+                android:text="@string/consult_user_label" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/ocean_blue"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:textSize="@dimen/titles_standard_size"
             android:layout_margin="@dimen/global_margin"
             android:text="@string/accounts_label" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/create_account_admin_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/global_margin"
+                android:text="@string/create_account_label" />
+
+            <Button
+                android:id="@+id/consult_account_admin_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/global_margin"
+                android:text="@string/consult_account_label" />
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/logout_admin_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/orange"
             android:layout_margin="@dimen/global_margin"
+            android:layout_weight="0"
+            android:backgroundTint="@color/orange"
             android:text="@string/logout_label" />
 
     </LinearLayout>
+
 </layout>

@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="ocean_blue">#082E41</color>
     <color name="orange">#E44310</color>
+    <color name="red">#FF0000</color>
 </resources>

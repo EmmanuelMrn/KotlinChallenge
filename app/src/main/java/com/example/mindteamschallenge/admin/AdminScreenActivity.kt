@@ -10,6 +10,8 @@ import androidx.appcompat.app.AlertDialog
 import com.example.mindteamschallenge.login.LoginActivity
 import com.example.mindteamschallenge.R
 import com.example.mindteamschallenge.databinding.ActivityAdminScreenBinding
+import com.example.mindteamschallenge.detailsoptions.CreateAccountFragment
+import com.example.mindteamschallenge.detailsoptions.CreateUserFragment
 import com.example.mindteamschallenge.utils.DBConstants
 
 class AdminScreenActivity : AppCompatActivity(), AdminContract.View {
@@ -23,12 +25,12 @@ class AdminScreenActivity : AppCompatActivity(), AdminContract.View {
         mAdminPresenter = AdminPresenter(this, AdminModel())
 
 
-        mBindingData.usersAdminButton.setOnClickListener {
-
+        mBindingData.createUserAdminButton.setOnClickListener {
+            showCreateUserFragment()
         }
 
-        mBindingData.accountsAdminButton.setOnClickListener {
-
+        mBindingData.createAccountAdminButton.setOnClickListener {
+            showCreateAccountFragment()
         }
 
         mBindingData.logoutAdminButton.setOnClickListener {
@@ -39,6 +41,18 @@ class AdminScreenActivity : AppCompatActivity(), AdminContract.View {
         saveSession()
 
         Toast.makeText(this, getString(R.string.welcome_admin_message), Toast.LENGTH_SHORT).show()
+    }
+
+    private fun showCreateUserFragment() {
+        val dialog = CreateUserFragment()
+
+        dialog.show(supportFragmentManager, "create_user_dialog")
+    }
+
+    private fun showCreateAccountFragment() {
+        val dialog = CreateAccountFragment()
+
+        dialog.show(supportFragmentManager, "create_account_dialog")
     }
 
     override fun showSuccessAlert(title: String, message: String) {

@@ -10,6 +10,7 @@ import androidx.appcompat.app.AlertDialog
 import com.example.mindteamschallenge.login.LoginActivity
 import com.example.mindteamschallenge.R
 import com.example.mindteamschallenge.databinding.ActivitySuperAdminScreenBinding
+import com.example.mindteamschallenge.detailsoptions.ChooseUserFragment
 import com.example.mindteamschallenge.detailsoptions.CreateAccountFragment
 import com.example.mindteamschallenge.detailsoptions.CreateUserBySuperAdminFragment
 import com.example.mindteamschallenge.utils.DBConstants
@@ -32,7 +33,7 @@ class SuperAdminScreenActivity : AppCompatActivity(), SuperAdminContract.View {
         }
 
         mBindingData.consultUserSuperAdminButton.setOnClickListener {
-
+            showChooseUserFragment()
         }
 
         mBindingData.createAccountSuperAdminButton.setOnClickListener {
@@ -62,9 +63,15 @@ class SuperAdminScreenActivity : AppCompatActivity(), SuperAdminContract.View {
     }
 
     private fun showCreateAccountFragment() {
-        var dialog = CreateAccountFragment()
+        val dialog = CreateAccountFragment()
 
         dialog.show(supportFragmentManager, "create_account_dialog")
+    }
+
+    private fun showChooseUserFragment() {
+        val dialog = ChooseUserFragment()
+
+        dialog.show(supportFragmentManager, "choose_user_dialog")
     }
 
     override fun showSuccessAlert(title: String, message: String) {

@@ -64,10 +64,13 @@
     <string name="welcome_admin_message">Welcome Admin!</string>
     <string name="welcome_super_admin_message">Welcome Super Admin!</string>
     <string name="save_changes">Save changes</string>
+    <string name="choose_user">Choose user:</string>
 
     <string name="user_screen_info_name">Name: </string>
     <string name="user_screen_info_email">Email: </string>
     <string name="user_screen_info_english_level">English Level (%): </string>
     <string name="user_screen_info_tech_knowledge">Tech Knowledge: </string>
     <string name="user_screen_info_cv">CV: </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

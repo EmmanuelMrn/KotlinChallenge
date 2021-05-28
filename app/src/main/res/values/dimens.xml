@@ -5,4 +5,5 @@
     <dimen name="start_padding">10dp</dimen>
     <dimen name="is_admin_label">18sp</dimen>
     <dimen name="titles_standard_size">22sp</dimen>
+    <dimen name="item_list">16sp</dimen>
 </resources>

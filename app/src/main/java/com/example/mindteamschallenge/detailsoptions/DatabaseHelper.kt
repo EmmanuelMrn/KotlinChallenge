@@ -1,5 +1,6 @@
 package com.example.mindteamschallenge.detailsoptions
 
+import android.util.Log
 import com.example.mindteamschallenge.utils.DBConstants
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -29,11 +30,28 @@ class DatabaseHelper {
     fun createNewAccount(dataAccountRegister: DataAccountRegister) {
         mDBAccess.collection(DBConstants.ACCOUNTS_DB_COLLECTION).document(dataAccountRegister.accountName).set(
             hashMapOf(
-                "name" to dataAccountRegister.accountName,
-                "email" to dataAccountRegister.clientName,
-                "levelAccess" to dataAccountRegister.responsibleOperation
+                "accountName" to dataAccountRegister.accountName,
+                "clientName" to dataAccountRegister.clientName,
+                "responsibleOperation" to dataAccountRegister.responsibleOperation
             )
         )
+    }
+
+    fun getUserList() {
+        var usersList = mutableListOf<String>()
+
+        mDBAccess.collection(DBConstants.USERS_DB_COLLECTION)
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    Log.d("tag", "${document.id} => ${document.data}")
+                }
+
+            }
+    }
+
+    fun getAccountsList() {
+
     }
 
 //    fun getUser(email: String) {
