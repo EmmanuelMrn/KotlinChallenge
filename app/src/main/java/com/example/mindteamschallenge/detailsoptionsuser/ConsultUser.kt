@@ -26,7 +26,7 @@ class ConsultUser : AppCompatActivity() {
 
         if (email != null) {
             mDatabaseHelper.getUser(email) { userInfo ->
-                Log.d("tag", "Consult User: " + userInfo.name)
+                Log.d("tag", "Consulted User: " + userInfo.name)
                 showDetailInfo(userInfo)
             }
         }

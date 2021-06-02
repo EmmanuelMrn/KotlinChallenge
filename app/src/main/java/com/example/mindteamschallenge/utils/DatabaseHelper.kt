@@ -142,9 +142,6 @@ class DatabaseHelper {
     }
 
     fun updateMemberTeam(userID: String, accountName: String, successListener: (String) -> Unit) {
-        mDBAccess.collection(DBConstants.USERS_DB_COLLECTION).document(userID)
-            .update(DBConstants.ACCOUNT_NAME, accountName)
-
         var userPreviousAccount: String
         mDBAccess.collection(DBConstants.USERS_DB_COLLECTION).document(userID).get()
             .addOnSuccessListener { result ->
@@ -153,11 +150,16 @@ class DatabaseHelper {
                     .document(userPreviousAccount)
                     .update(DBConstants.ACCOUNT_TEAM, FieldValue.arrayRemove(userID))
                     .addOnSuccessListener {
+                        Log.d("tag", "Previous account: $userPreviousAccount")
                         mDBAccess.collection(DBConstants.ACCOUNTS_DB_COLLECTION)
                             .document(accountName)
                             .update(DBConstants.ACCOUNT_TEAM, FieldValue.arrayUnion(userID)).
                                 addOnSuccessListener {
-                                    successListener("successful")
+                                    Log.d("tag", "New account: $accountName")
+                                    mDBAccess.collection(DBConstants.USERS_DB_COLLECTION).document(userID)
+                                        .update(DBConstants.ACCOUNT_NAME, accountName).addOnSuccessListener {
+                                            successListener("successful")
+                                        }
                                 }
                     }
             }

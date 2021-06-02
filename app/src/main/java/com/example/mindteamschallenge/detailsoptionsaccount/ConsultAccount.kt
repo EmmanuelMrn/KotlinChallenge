@@ -30,7 +30,7 @@ class ConsultAccount : AppCompatActivity() {
 
         if (accountName != null) {
             mDatabaseHelper.getAccount(accountName) { accountInfo ->
-                Log.d("tag", "Consult User: " + accountInfo.accountName)
+                Log.d("tag", "Consulted Account: " + accountInfo.accountName)
                 showDetailInfo(accountInfo)
             }
         }
