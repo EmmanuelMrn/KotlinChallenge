@@ -14,11 +14,11 @@
         android:roundIcon="@mipmap/ic_kotlin_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MindTeamsChallenge">
-        <activity android:name=".detailsoptions.ConsultUser"></activity>
+        <activity android:name=".detailsoptionsaccount.ConsultAccount"></activity>
+        <activity android:name=".detailsoptionsuser.ConsultUser" />
         <activity android:name=".user.UserScreenActivity" />
         <activity android:name=".superadmin.SuperAdminScreenActivity" />
         <activity android:name=".admin.AdminScreenActivity" />
-        <activity android:name=".home.HomeActivity" />
         <activity android:name=".login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

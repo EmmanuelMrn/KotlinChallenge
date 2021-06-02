@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".detailsoptions.UserMenuFragment">
+    tools:context=".detailsoptionsuser.UserMenuFragment">
 
     <Button
         android:id="@+id/user_menu_create_user_button"

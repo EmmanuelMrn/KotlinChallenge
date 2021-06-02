@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/item_title"
+    <Button
+        android:id="@+id/team_member_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/global_margin"
-        android:textColor="@color/ocean_blue"
-        android:textSize="@dimen/item_list"
-        tools:text="item" />
+        android:textColor="@color/black"
+        android:textSize="@dimen/item_list_second_size"  />
 
 </LinearLayout>

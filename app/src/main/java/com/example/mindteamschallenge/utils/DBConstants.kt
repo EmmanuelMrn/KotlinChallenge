@@ -7,4 +7,14 @@ object DBConstants {
     const val LEVEL_ACCESS = "levelAccess"
     const val USERS_DB_COLLECTION = "users"
     const val ACCOUNTS_DB_COLLECTION = "accounts"
+    const val EMAIL = "email"
+    const val NAME = "name"
+    const val ENGLISH_LEVEL = "englishLevel"
+    const val TECH_KNOWLEDGE = "techKnowledge"
+    const val CV_LINK = "cvLink"
+
+    const val ACCOUNT_NAME = "accountName"
+    const val ACCOUNT_CLIENT_NAME = "clientName"
+    const val ACCOUNT_OP_RESPONSIBLE = "responsibleOperation"
+    const val ACCOUNT_TEAM = "team"
 }

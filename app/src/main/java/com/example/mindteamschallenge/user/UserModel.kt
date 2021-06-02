@@ -13,18 +13,22 @@ class UserModel : UserContract.Model {
     ) {
         mDBAccess.collection(DBConstants.USERS_DB_COLLECTION).document(email).get()
             .addOnSuccessListener {
-                val nameFromDatabase = (it.get("name") as String?).toString()
-                val emailFromDatabase = (it.get("email") as String?).toString()
-                val englishLevelFromDatabase = (it.get("englishLevel") as String?).toString()
-                val techKnowledgeFromDatabase = (it.get("techKnowledge") as String?).toString()
-                val cvLinkFromDatabase = (it.get("cvLink") as String?).toString()
+                val nameFromDatabase = (it.get(DBConstants.NAME) as String?).toString()
+                val emailFromDatabase = (it.get(DBConstants.EMAIL) as String?).toString()
+                val englishLevelFromDatabase = (it.get(DBConstants.ENGLISH_LEVEL) as String?).toString()
+                val techKnowledgeFromDatabase = (it.get(DBConstants.TECH_KNOWLEDGE) as String?).toString()
+                val cvLinkFromDatabase = (it.get(DBConstants.CV_LINK) as String?).toString()
+                val levelAccessFromDatabase = (it.get(DBConstants.LEVEL_ACCESS) as String?).toString()
+                val accountNameFromDatabase = (it.get(DBConstants.ACCOUNT_NAME) as String?).toString()
 
                 val dataUserFromDatabase = DataUser(
                     nameFromDatabase,
                     emailFromDatabase,
                     englishLevelFromDatabase,
                     techKnowledgeFromDatabase,
-                    cvLinkFromDatabase
+                    cvLinkFromDatabase,
+                    levelAccessFromDatabase,
+                    accountNameFromDatabase
                 )
 
                 successListener(dataUserFromDatabase)
@@ -39,14 +43,16 @@ class UserModel : UserContract.Model {
         successListener: (String) -> Unit,
         errorListener: (String) -> Unit
     ) {
-        mDBAccess.collection(DBConstants.USERS_DB_COLLECTION).document(dataForUpdate.email).set(
+        mDBAccess.collection(DBConstants.USERS_DB_COLLECTION).document(dataForUpdate.email).update(
             hashMapOf(
-                "name" to dataForUpdate.name,
-                "email" to dataForUpdate.email,
-                "englishLevel" to dataForUpdate.englishLevel,
-                "techKnowledge" to dataForUpdate.techKnowledge,
-                "cvLink" to dataForUpdate.cvLink
-            )
+                DBConstants.NAME to dataForUpdate.name,
+                DBConstants.EMAIL to dataForUpdate.email,
+                DBConstants.ENGLISH_LEVEL to dataForUpdate.englishLevel,
+                DBConstants.TECH_KNOWLEDGE to dataForUpdate.techKnowledge,
+                DBConstants.CV_LINK to dataForUpdate.cvLink,
+                DBConstants.LEVEL_ACCESS to dataForUpdate.levelAccess,
+                DBConstants.ACCOUNT_NAME to dataForUpdate.accountName
+            ) as Map<String, Any>
         ).addOnSuccessListener {
             successListener("success")
         }.addOnFailureListener {

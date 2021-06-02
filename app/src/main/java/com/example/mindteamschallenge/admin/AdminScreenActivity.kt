@@ -10,8 +10,10 @@ import androidx.appcompat.app.AlertDialog
 import com.example.mindteamschallenge.login.LoginActivity
 import com.example.mindteamschallenge.R
 import com.example.mindteamschallenge.databinding.ActivityAdminScreenBinding
-import com.example.mindteamschallenge.detailsoptions.CreateAccountFragment
-import com.example.mindteamschallenge.detailsoptions.CreateUserFragment
+import com.example.mindteamschallenge.detailsoptionsaccount.ChooseAccountFragment
+import com.example.mindteamschallenge.detailsoptionsaccount.CreateAccountFragment
+import com.example.mindteamschallenge.detailsoptionsuser.ChooseUserFragment
+import com.example.mindteamschallenge.detailsoptionsuser.CreateUserFragment
 import com.example.mindteamschallenge.utils.DBConstants
 
 class AdminScreenActivity : AppCompatActivity(), AdminContract.View {
@@ -23,7 +25,8 @@ class AdminScreenActivity : AppCompatActivity(), AdminContract.View {
         mBindingData = ActivityAdminScreenBinding.inflate(layoutInflater)
         setContentView(mBindingData.root)
         mAdminPresenter = AdminPresenter(this, AdminModel())
-
+        val bundle = intent.extras
+        val email = bundle?.getString(getString(R.string.email_label))
 
         mBindingData.createUserAdminButton.setOnClickListener {
             showCreateUserFragment()
@@ -33,12 +36,22 @@ class AdminScreenActivity : AppCompatActivity(), AdminContract.View {
             showCreateAccountFragment()
         }
 
+        mBindingData.consultUserAdminButton.setOnClickListener {
+            mAdminPresenter.getUsersList()
+        }
+
+        mBindingData.consultAccountAdminButton.setOnClickListener {
+            mAdminPresenter.getAccountsList()
+        }
+
         mBindingData.logoutAdminButton.setOnClickListener {
             deleteSession()
             mAdminPresenter.logout()
         }
 
-        saveSession()
+        if (email != null) {
+            saveSession(email)
+        }
 
         Toast.makeText(this, getString(R.string.welcome_admin_message), Toast.LENGTH_SHORT).show()
     }
@@ -53,6 +66,18 @@ class AdminScreenActivity : AppCompatActivity(), AdminContract.View {
         val dialog = CreateAccountFragment()
 
         dialog.show(supportFragmentManager, "create_account_dialog")
+    }
+
+    override fun showChooseUserFragment(usersList: MutableList<String>, usersListLevelAccess: MutableList<String>) {
+        val dialog = ChooseUserFragment(usersList, usersListLevelAccess)
+
+        dialog.show(supportFragmentManager, "choose_user_dialog")
+    }
+
+    override fun showChooseAccountFragment(accountsList: MutableList<String>, clientsNamesList: MutableList<String>) {
+        val dialog = ChooseAccountFragment(accountsList, clientsNamesList)
+
+        dialog.show(supportFragmentManager, "choose_account_dialog")
     }
 
     override fun showSuccessAlert(title: String, message: String) {
@@ -79,15 +104,13 @@ class AdminScreenActivity : AppCompatActivity(), AdminContract.View {
         finish()
     }
 
-    private fun saveSession() {
-        val bundle = intent.extras
-        val email = bundle?.getString(getString(R.string.email_label))
+    private fun saveSession(email: String) {
         val sharedPreferences: SharedPreferences.Editor = getSharedPreferences(
             getString(R.string.shared_preferences_file),
             Context.MODE_PRIVATE
         ).edit()
         sharedPreferences.putString(getString(R.string.email_label), email)
-        sharedPreferences.putString(DBConstants.LEVEL_ACCESS, DBConstants.ADMIN_ROLE)
+        sharedPreferences.putString(DBConstants.LEVEL_ACCESS, DBConstants.SUPER_ADMIN_ROLE)
         sharedPreferences.apply()
     }
 

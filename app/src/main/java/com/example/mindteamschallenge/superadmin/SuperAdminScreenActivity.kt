@@ -10,9 +10,10 @@ import androidx.appcompat.app.AlertDialog
 import com.example.mindteamschallenge.login.LoginActivity
 import com.example.mindteamschallenge.R
 import com.example.mindteamschallenge.databinding.ActivitySuperAdminScreenBinding
-import com.example.mindteamschallenge.detailsoptions.ChooseUserFragment
-import com.example.mindteamschallenge.detailsoptions.CreateAccountFragment
-import com.example.mindteamschallenge.detailsoptions.CreateUserBySuperAdminFragment
+import com.example.mindteamschallenge.detailsoptionsaccount.ChooseAccountFragment
+import com.example.mindteamschallenge.detailsoptionsuser.ChooseUserFragment
+import com.example.mindteamschallenge.detailsoptionsaccount.CreateAccountFragment
+import com.example.mindteamschallenge.detailsoptionsuser.CreateUserBySuperAdminFragment
 import com.example.mindteamschallenge.utils.DBConstants
 
 class SuperAdminScreenActivity : AppCompatActivity(), SuperAdminContract.View {
@@ -33,7 +34,7 @@ class SuperAdminScreenActivity : AppCompatActivity(), SuperAdminContract.View {
         }
 
         mBindingData.consultUserSuperAdminButton.setOnClickListener {
-            showChooseUserFragment()
+            mSuperAdminPresenter.getUsersList()
         }
 
         mBindingData.createAccountSuperAdminButton.setOnClickListener {
@@ -41,7 +42,7 @@ class SuperAdminScreenActivity : AppCompatActivity(), SuperAdminContract.View {
         }
 
         mBindingData.consultAccountSuperAdminButton.setOnClickListener {
-
+            mSuperAdminPresenter.getAccountsList()
         }
 
         mBindingData.logoutSuperAdminButton.setOnClickListener {
@@ -68,10 +69,16 @@ class SuperAdminScreenActivity : AppCompatActivity(), SuperAdminContract.View {
         dialog.show(supportFragmentManager, "create_account_dialog")
     }
 
-    private fun showChooseUserFragment() {
-        val dialog = ChooseUserFragment()
+    override fun showChooseUserFragment(usersList: MutableList<String>, usersListLevelAccess: MutableList<String>) {
+        val dialog = ChooseUserFragment(usersList, usersListLevelAccess)
 
         dialog.show(supportFragmentManager, "choose_user_dialog")
+    }
+
+    override fun showChooseAccountFragment(accountsList: MutableList<String>, clientsNamesList: MutableList<String>) {
+        val dialog = ChooseAccountFragment(accountsList, clientsNamesList)
+
+        dialog.show(supportFragmentManager, "choose_account_dialog")
     }
 
     override fun showSuccessAlert(title: String, message: String) {

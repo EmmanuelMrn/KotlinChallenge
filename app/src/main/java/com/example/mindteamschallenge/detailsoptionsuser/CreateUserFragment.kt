@@ -1,4 +1,4 @@
-package com.example.mindteamschallenge.detailsoptions
+package com.example.mindteamschallenge.detailsoptionsuser
 
 import android.app.Activity
 import android.content.Context
@@ -13,8 +13,8 @@ import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import com.example.mindteamschallenge.R
-import com.example.mindteamschallenge.login.DataUserLogin
 import com.example.mindteamschallenge.utils.DBConstants
+import com.example.mindteamschallenge.utils.DatabaseHelper
 
 class CreateUserFragment : DialogFragment() {
     private lateinit var mDatabaseHelper: DatabaseHelper

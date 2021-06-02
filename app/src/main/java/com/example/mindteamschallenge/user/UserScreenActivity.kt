@@ -36,6 +36,8 @@ class UserScreenActivity : AppCompatActivity(), UserContract.View {
                 mBindingData.userEnglishLevelEdittext.text.toString(),
                 mBindingData.userKnowledgeEdittext.text.toString(),
                 mBindingData.userLinkCvEdittext.text.toString(),
+                DBConstants.USER_ROLE,
+                mBindingData.userAccountNameTextview.text.toString()
             )
             mUserPresenter.updateUserInfo(dataForUpdate)
         }
@@ -65,6 +67,7 @@ class UserScreenActivity : AppCompatActivity(), UserContract.View {
         mBindingData.userEnglishLevelEdittext.setText(dataUser.englishLevel)
         mBindingData.userKnowledgeEdittext.setText(dataUser.techKnowledge)
         mBindingData.userLinkCvEdittext.setText(dataUser.cvLink)
+        mBindingData.userAccountNameTextview.text = dataUser.accountName
     }
 
     override fun showSuccessDataUpdated() {

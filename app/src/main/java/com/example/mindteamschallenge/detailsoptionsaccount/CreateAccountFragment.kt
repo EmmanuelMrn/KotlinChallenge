@@ -1,4 +1,4 @@
-package com.example.mindteamschallenge.detailsoptions
+package com.example.mindteamschallenge.detailsoptionsaccount
 
 import android.app.Activity
 import android.content.Context
@@ -13,7 +13,7 @@ import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import com.example.mindteamschallenge.R
-import com.example.mindteamschallenge.utils.DBConstants
+import com.example.mindteamschallenge.utils.DatabaseHelper
 
 
 class CreateAccountFragment : DialogFragment() {
@@ -52,10 +52,12 @@ class CreateAccountFragment : DialogFragment() {
 
     private fun createNewAccount() {
         if (accountNameEditText.text.isNotEmpty() && accountClientEditText.text.isNotEmpty() && responsibleOperationEditText.text.isNotEmpty()) {
-            val dataAccountRegister = DataAccountRegister(
+            val teamList: List<String> = emptyList()
+            val dataAccountRegister = DataAccount(
                 accountNameEditText.text.toString(),
                 accountClientEditText.text.toString(),
-                responsibleOperationEditText.text.toString()
+                responsibleOperationEditText.text.toString(),
+                teamList
             )
             mDatabaseHelper.createNewAccount(dataAccountRegister)
             Toast.makeText(activity, R.string.account_created_successfully_label, Toast.LENGTH_SHORT).show()

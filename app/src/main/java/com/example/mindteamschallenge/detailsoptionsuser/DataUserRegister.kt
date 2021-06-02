@@ -1,4 +1,4 @@
-package com.example.mindteamschallenge.detailsoptions
+package com.example.mindteamschallenge.detailsoptionsuser
 
 data class DataUserRegister(
     val name: String,

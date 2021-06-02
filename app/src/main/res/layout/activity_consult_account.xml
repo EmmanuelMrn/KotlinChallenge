@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".detailsoptionsuser.ConsultUser">
+        tools:context=".detailsoptionsaccount.ConsultAccount">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,16 +23,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/global_margin"
                 android:layout_marginTop="@dimen/global_margin"
-                android:text="@string/user_screen_info_name"
+                android:layout_marginBottom="@dimen/global_margin"
+                android:text="@string/account_name_title"
                 android:textStyle="bold"
                 android:textSize="@dimen/item_list"
                 android:textColor="@color/black" />
 
             <TextView
-                android:id="@+id/consult_user_name_textview"
+                android:id="@+id/consult_account_name_textview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/global_margin"
+                android:layout_marginBottom="@dimen/global_margin"
                 android:textColor="@color/black"
                 android:textSize="@dimen/item_list_second_size" />
 
@@ -40,16 +42,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/global_margin"
-                android:text="@string/user_screen_info_email"
+                android:layout_marginBottom="@dimen/global_margin"
+                android:text="@string/account_client_name_title"
                 android:textStyle="bold"
                 android:textSize="@dimen/item_list"
                 android:textColor="@color/black"/>
 
             <TextView
-                android:id="@+id/consult_user_email_textview"
+                android:id="@+id/consult_client_name_textview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/global_margin"
+                android:layout_marginBottom="@dimen/global_margin"
                 android:textColor="@color/black"
                 android:textSize="@dimen/item_list_second_size"  />
 
@@ -57,16 +61,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/global_margin"
-                android:text="@string/user_screen_info_english_level"
+                android:layout_marginBottom="@dimen/global_margin"
+                android:text="@string/account_responsible_name_title"
                 android:textStyle="bold"
                 android:textSize="@dimen/item_list"
                 android:textColor="@color/black" />
 
             <TextView
-                android:id="@+id/consult_user_english_level_textview"
+                android:id="@+id/consult_op_responsible_textview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/global_margin"
+                android:layout_marginBottom="@dimen/global_margin"
                 android:textColor="@color/black"
                 android:textSize="@dimen/item_list_second_size" />
 
@@ -74,69 +80,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/global_margin"
-                android:text="@string/user_screen_info_tech_knowledge"
+                android:layout_marginBottom="@dimen/global_margin"
+                android:text="@string/account_team_title"
                 android:textStyle="bold"
                 android:textSize="@dimen/item_list"
                 android:textColor="@color/black" />
 
-            <TextView
-                android:id="@+id/consult_user_tech_knowledge_textview"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/consult_account_recyclerview"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/global_margin"
                 android:layout_marginHorizontal="@dimen/global_margin"
-                android:textColor="@color/black"
-                android:textSize="@dimen/item_list_second_size" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/global_margin"
-                android:text="@string/user_screen_info_cv"
-                android:textStyle="bold"
-                android:textSize="@dimen/item_list"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:id="@+id/consult_user_cv_link_textview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/global_margin"
-                android:textColor="@color/black"
-                android:textSize="@dimen/item_list_second_size" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/global_margin"
-                android:text="@string/level_access_label"
-                android:textStyle="bold"
-                android:textSize="@dimen/item_list"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:id="@+id/consult_user_level_access_textview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/global_margin"
-                android:textColor="@color/black"
-                android:textSize="@dimen/item_list_second_size" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/global_margin"
-                android:text="@string/account_name_title"
-                android:textStyle="bold"
-                android:textSize="@dimen/item_list"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:id="@+id/consult_user_account_name_textview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/global_margin"
-                android:textColor="@color/black"
-                android:textSize="@dimen/item_list_second_size" />
+                android:orientation="vertical"
+                android:layout_height="match_parent" />
 
         </LinearLayout>
 
@@ -149,15 +105,7 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/consult_user_modify_account_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/ocean_blue"
-                android:text="@string/modify_team_label"
-                android:textColor="@color/white" />
-
-            <Button
-                android:id="@+id/consult_user_cancel_changes_button"
+                android:id="@+id/consult_account_cancel_changes_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/orange"
@@ -165,11 +113,11 @@
                 android:textColor="@color/white" />
 
             <Button
-                android:id="@+id/consult_user_delete_user_button"
+                android:id="@+id/consult_account_delete_account_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/red"
-                android:text="@string/delete_user_label"
+                android:text="@string/delete_account_label"
                 android:textColor="@color/white" />
         </LinearLayout>
 

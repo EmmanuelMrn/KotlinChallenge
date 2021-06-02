@@ -30,7 +30,7 @@ class LoginPresenter(
     override fun getUserRole(email: String) {
         loginModel.getLevelAccess(email, { levelAccess ->
             loginActivity.showHome(email, levelAccess)
-        }, { error ->
+        }, {
             loginActivity.showConnectionErrorAlert()
         })
     }

@@ -120,6 +120,26 @@
                 android:hint="@string/cv_label"
                 android:inputType="text"
                 android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/global_margin"
+                android:gravity="left |center_vertical"
+                android:paddingHorizontal="@dimen/start_padding"
+                android:text="@string/account_name_title"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/user_account_name_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/global_margin"
+                android:gravity="left |center_vertical"
+                android:paddingHorizontal="@dimen/start_padding"
+                android:text="@string/account_name_label"
+                android:textColor="@color/black" />
         </LinearLayout>
 
         <LinearLayout

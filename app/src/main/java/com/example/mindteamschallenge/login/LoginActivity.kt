@@ -23,10 +23,9 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
         super.onCreate(savedInstanceState)
         mBindingData = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(mBindingData.root)
-
         mLoginPresenter = LoginPresenter(this, LoginModel())
-
         checkSession()
+
 
         mBindingData.buttonLogin.setOnClickListener {
             mBindingData.progressBarLogin.visibility = View.VISIBLE
